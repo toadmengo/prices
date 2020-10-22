@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
+import api
 def main(keyword, numberofitems):
     url='https://svcs.ebay.com/services/search/FindingService/v1'
-    appid = 'ToddMeng-Pricecom-PRD-2e65090ee-80325ccb'
+    appid = api.ebaykey
     params = {'SECURITY-APPNAME': appid,'OPERATION-NAME':'findItemsByKeywords','keywords': keyword, 'paginationInput.entriesPerPage': numberofitems}
     r = requests.get(url, params = params)
 
