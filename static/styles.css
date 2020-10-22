@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+}
+
+.header {
+    padding:10px;
+    text-align: center;
+}
+
+.header-wrapper {
+    background-color: lightskyblue;
+}
+
+.logo-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.card-logo{
+    padding: 5px;
+}
+.logo {
+    background-color: white;
+    width: 90px;
+    height: 40px;
+}
+
+#search-results{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.amazon {
+    background-color: orange;
+}
+
+.ebay {
+    background-color: rgb(255, 51, 51);
+}
+
+.result {
+    width: 14rem;
+    height: 30rem;
+    padding: 5px;
+    background-color: blanchedalmond;
+}
+
+.tackon {
+    width:60px;
+    height:25px;
+    margin-left: 100px;
+}

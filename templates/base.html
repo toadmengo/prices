@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pricelookUp</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel= "stylesheet" type="text/css" href= "/static/styles.css">        
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-center">
+            <a class="navbar-brand">
+                <img src="/static/logo.jpg" width="30" height="30" alt="" loading="lazy">
+            </a>
+            <div class = 'test'></div>
+            <form class="form-inline" action="#" method = "POST">
+                <input name ='item' class="form-control mr-sm-2" type="search submit" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <div>
+            <div class='card header-wrapper'>
+                <div class = 'card-body'>
+                {% block header %}
+                {% endblock %}
+                </div>
+                <div class = 'logo-container'>
+                    <div class = 'card card-logo'>
+                        <img src= '/static/amazonlogo.png' class = 'logo'>
+                    </div>
+                    <div class = 'card card-logo'>
+                        <img src= '/static/ebaylogo.PNG' class = 'logo'>
+                    </div>
+                    <div class = 'card card-logo'>
+                        <img src= '/static/newegglogo.PNG' class = 'logo'>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+
+</html>

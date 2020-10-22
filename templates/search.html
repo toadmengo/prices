@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block header %}
+    <h3 class= 'header'>Searching for {{item}}...</h1>
+{% endblock %}
+
+{% block content %}
+<div id = 'search-results'>
+    <div class = 'amazon card'>
+        <div class = 'card-body'>
+        {% for item in amazon %}
+            <div class = 'card result'>
+                <img src={{item[3]}} ,class="card-img-top" alt='/static/amazonlogo.PNG'>
+                <div class="card-body">
+                    <a href={{item[2]}} class="card-title">{{item[0]}}</a>
+                    <p class = 'card-text'>{{item[1]}}</p>
+                    <img src= '/static/amazonlogo.png' class = 'tackon'>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+        </div>
+    </div>
+    <div class = 'ebay card'>
+        <div class = 'card-body'>
+        {% for item in ebay %}
+            <div class = 'card result'>
+                <img src={{item[3]}}, class="card-img-top" alt='/static/ebaylogo.PNG'>
+                <div class="card-body">
+                    <a href={{item[2]}} class="card-title">{{item[0]}}</a>
+                    <p class = 'card-text'>${{item[1]}}</p>
+                    <img src= '/static/ebaylogo.PNG' class = 'tackon'>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+        </div>
+    </div>
+    <div class = 'newegg card'>
+        <div class = 'card-body'>
+        {% for item in newegg %}
+            <div class = 'card result'>
+                <img src={{item[3]}} ,class="card-img-top" alt='/static/newegglogo.PNG'>
+                <div class="card-body">
+                    <a href={{item[2]}} class="card-title">{{item[0]}}</a>
+                    <p class = 'card-text'>{{item[1]}}</p>
+                    <img src= '/static/newegglogo.PNG' class = 'tackon'>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
