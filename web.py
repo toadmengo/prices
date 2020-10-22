@@ -34,8 +34,7 @@ def search(item):
         ebaylist = ebay.main(keyword, 5)
         amazonlist = amazon.main(keyword, 5)
         newegglist = newegg.main(keyword, 5)
-        for egg in newegglist:
-            print(egg[3])
+
         return render_template('search.html', item = item, amazon = amazonlist, ebay = ebaylist, newegg = newegglist)
 
 if __name__ == '__main__':
