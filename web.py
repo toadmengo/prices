@@ -1,24 +1,27 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session
 import ebay
 import amazon
 import newegg
 
 app = Flask(__name__)
+app.secret_key = "christmastree"
 
 @app.route('/', methods=["POST", 'GET'])
 def home():
     if request.method == 'POST':
         username = request.form["username"]
-        return redirect(url_for("main", user=username))
+        session["user"] = username
+        return redirect(url_for("main"))
     else:
         return render_template('index.html')
 
-@app.route('/<user>', methods=["POST", 'GET'])
-def main(user):
+@app.route('/search', methods=["POST", 'GET'])
+def main():
     if request.method == 'POST':
         product = request.form["item"]
         return redirect(url_for("search", item=product))
     else:
+        user = session['user']
         return render_template('main.html', user=user)
 
 @app.route('/search/<item>', methods=["POST", 'GET'])
