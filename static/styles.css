@@ -11,6 +11,16 @@ body {
     background-color: lightskyblue;
 }
 
+.move {
+    padding: 10px;
+}
+
+.login-wrapper {
+    text-align: center;
+    width:40%;
+    margin: auto; 
+}
+
 .logo-container {
     width: 90%;
     margin: auto;

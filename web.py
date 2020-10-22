@@ -8,10 +8,18 @@ app = Flask(__name__)
 @app.route('/', methods=["POST", 'GET'])
 def home():
     if request.method == 'POST':
+        username = request.form["username"]
+        return redirect(url_for("main", user=username))
+    else:
+        return render_template('index.html')
+
+@app.route('/<user>', methods=["POST", 'GET'])
+def main(user):
+    if request.method == 'POST':
         product = request.form["item"]
         return redirect(url_for("search", item=product))
     else:
-        return render_template('index.html')
+        return render_template('main.html', user=user)
 
 @app.route('/search/<item>', methods=["POST", 'GET'])
 def search(item):
