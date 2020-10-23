@@ -1,12 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def main(keyword, numberofitems):
     url = 'https://www.newegg.com/p/pl'
     query = keyword.replace(' ', '+')
     params = dict(d=query)
+    headers= {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
 
-    r = requests.get(url, params= params)
+    r = requests.get(url, params= params, headers= headers)
     soup = BeautifulSoup(r.content, 'html.parser')
     items = soup.find_all('div', {'class': 'item-cell'}, limit = numberofitems)
     prices = []

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, url_for, session
 import ebay
 import amazon
-import newegg
+import walmart
 
 app = Flask(__name__)
 app.secret_key = "christmastree"
@@ -33,9 +33,8 @@ def search(item):
         keyword = str(item)
         ebaylist = ebay.main(keyword, 5)
         amazonlist = amazon.main(keyword, 5)
-        newegglist = newegg.main(keyword, 5)
-
-        return render_template('search.html', item = item, amazon = amazonlist, ebay = ebaylist, newegg = newegglist)
+        walmartlist = walmart.main(keyword, 5)
+        return render_template('search.html', item = item, amazon = amazonlist, ebay = ebaylist, walmart = walmartlist)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+   app.run()

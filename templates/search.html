@@ -45,12 +45,12 @@
     </div>
     <div class = 'newegg card'>
         <div class = 'card-body'>
-        {% for item in newegg %}
+        {% for item in walmart %}
             <div class = 'card result'>
-                <img src={{item[3]}} ,class="card-img-top" alt='/static/newegglogo.PNG'>
+                <img src={{item[3]}} ,class="card-img-top" alt='/static/walmartlogo.PNG'>
                 <div class="card-body">
                     <a href={{item[2]}} class="card-title">{{item[0]}}</a>
-                    <p class = 'card-text'>{{item[1]}}</p>
+                    <p class = 'card-text'>${{item[1]}}</p>
                     <img src= '/static/newegglogo.PNG' class = 'tackon'>
                 </div>
             </div>

@@ -45,10 +45,15 @@ body {
 
 .amazon {
     background-color: orange;
+    width:18rem;
 }
 
 .ebay {
     background-color: rgb(255, 51, 51);
+    width:18rem;
+}
+.newegg {
+    width:18rem;
 }
 
 .result {
