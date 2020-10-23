@@ -31,9 +31,9 @@ def search(item):
         return redirect(url_for("search", item=product))
     else:    
         keyword = str(item)
-        ebaylist = ebay.main(keyword, 5)
-        amazonlist = amazon.main(keyword, 5)
-        walmartlist = walmart.main(keyword, 5)
+        ebaylist = ebay.main(keyword, 9)
+        amazonlist = amazon.main(keyword, 9)
+        walmartlist = walmart.main(keyword, 9)
         return render_template('search.html', item = item, amazon = amazonlist, ebay = ebaylist, walmart = walmartlist)
 
 if __name__ == '__main__':
